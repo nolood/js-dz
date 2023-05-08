@@ -68,6 +68,17 @@ var greet = 'Hello';
 
 // 6 *
 
+function minus(a) {
+    return function(b) {
+        return (a !== undefined && b !== undefined) ? a - b : (a !== undefined ? a : (b !== undefined ? -b : 0));
+    }
+}
+
+console.log(minus(10)(6)); // 4
+console.log(minus(5)(6)); // -1
+console.log(minus(10)()); // 10
+console.log(minus()(6))
+console.log(minus()()); // 0
 
 // 7 *
 

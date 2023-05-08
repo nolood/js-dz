@@ -49,7 +49,7 @@ const timer = (function () {
         const minutes= Math.floor(seconds % 86400 % 3600 / 60)
         const reminderSeconds = seconds % 86400 % 3600 % 60
 
-        const display = `${days > 0 ? days + ' дней' : ''} ${hours > 0 ? hours > 10 ? hours : '0' + hours + ':' : ''}${minutes > 10 ? minutes : '0' + minutes}:${reminderSeconds}`
+        const display = `${days > 0 ? days + ' дней' : ''} ${hours > 0 ? hours >= 10 ? hours + ':' : '0' + hours + ':' : ''}${minutes > 10 ? minutes : '0' + minutes}:${reminderSeconds >= 10 ? reminderSeconds : '0' + reminderSeconds}`
         document.title = display
         timerDisplay.textContent = display
     }
